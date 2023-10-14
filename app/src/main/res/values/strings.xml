@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">LoginNavigate</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="enter_email">Ingrese su correo</string>
+    <string name="enter_password">Ingrese su contraseña</string>
+    <string name="login">Ingresar</string>
+</resources>
