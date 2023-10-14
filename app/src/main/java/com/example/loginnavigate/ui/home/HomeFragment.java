@@ -1,6 +1,8 @@
 package com.example.loginnavigate.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,6 +37,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        SharedPreferences pref= getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        String email=pref.getString("email", "");
+        txt_email.setText(email);
         return root;
     }
 
@@ -49,6 +54,7 @@ public class HomeFragment extends Fragment {
         String password = txt_password.getText().toString();
         if (email.equals("admin@admin.com") && password.equals("admin")) {
             Toast.makeText(this.getContext(), "Login Success", Toast.LENGTH_SHORT).show();
+            saveEmailOnSharedPreferences();
             navigateToProfile();
         } else {
             Toast.makeText(this.getContext(), "Login Failed", Toast.LENGTH_SHORT).show();
@@ -59,5 +65,12 @@ public class HomeFragment extends Fragment {
         Intent next = new Intent(this.getContext(), ProfileActivity.class);
         next.putExtra("i_email", txt_email.getText().toString());
         startActivity(next);
+    }
+
+    public void saveEmailOnSharedPreferences(){
+        SharedPreferences pref= getActivity().getSharedPreferences("user", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edt= pref.edit();
+        edt.putString("email", txt_email.getText().toString());
+        edt.commit();
     }
 }

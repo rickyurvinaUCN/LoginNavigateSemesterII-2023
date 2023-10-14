@@ -8,4 +8,9 @@
     <string name="login">Ingresar</string>
     <string name="navigate">Navegar</string>
     <string name="enter_url">Ingrese URL</string>
+    <string name="key">Clave</string>
+    <string name="value">Valor</string>
+    <string name="search">Buscar</string>
+    <string name="save">Guardar</string>
+    <string name="enter_search">Ingresar clave a buscar</string>
 </resources>
