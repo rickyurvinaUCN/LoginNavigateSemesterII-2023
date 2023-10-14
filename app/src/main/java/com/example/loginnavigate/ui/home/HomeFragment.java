@@ -53,9 +53,6 @@ public class HomeFragment extends Fragment {
         } else {
             Toast.makeText(this.getContext(), "Login Failed", Toast.LENGTH_SHORT).show();
         }
-//        Intent next = new Intent(this.getContext(), MainActivity2.class);
-//        next.putExtra("info", txt_info.getText().toString());
-//        startActivity(next);
     }
 
     public void navigateToProfile() {
